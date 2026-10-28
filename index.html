@@ -1,450 +1,182 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Política de Privacidade do aplicativo Altitude Elevadores" />
-  <title>Política de Privacidade — Altitude Elevadores</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --purple: #5636d1;
-      --pink: #e2498a;
-      --dark: #32373c;
-      --text: #32373c;
-      --muted: #6b7280;
-      --bg: #f4f4f8;
-      --card: #ffffff;
-      --border: #e5e7eb;
-      --radius: 12px;
-      --gradient: #5636d1;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.75;
-      font-size: 16px;
-    }
-
-    /* ── Header ── */
-    header {
-      background: var(--gradient);
-      color: #fff;
-      padding: 56px 24px 48px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-
-    header .logo-wrap {
-      position: relative;
-      margin-bottom: 24px;
-    }
-
-    header .logo-wrap img {
-      height: 80px;
-      width: auto;
-      filter: brightness(0) invert(1);
-    }
-
-    header h1 {
-      position: relative;
-      font-size: clamp(22px, 4vw, 34px);
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
-    }
-
-    header .updated {
-      position: relative;
-      font-size: 13px;
-      color: rgba(255,255,255,0.65);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    header .updated::before {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.5);
-    }
-
-    /* ── Main ── */
-    main {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-
-    /* ── Intro box ── */
-    .intro-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--purple);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      margin-bottom: 32px;
-      font-size: 15px;
-      color: var(--muted);
-    }
-
-    .intro-box strong { color: var(--purple); }
-
-    /* ── Sections ── */
-    section {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      margin-bottom: 16px;
-      transition: box-shadow 0.2s;
-    }
-
-    section:hover {
-      box-shadow: 0 4px 20px rgba(86, 54, 209, 0.08);
-    }
-
-    section h2 {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    section h2 .num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      min-width: 30px;
-      background: var(--gradient);
-      color: #fff;
-      border-radius: 50%;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    p { margin-bottom: 12px; }
-    p:last-child { margin-bottom: 0; }
-
-    ul, ol {
-      padding-left: 20px;
-      margin-bottom: 12px;
-    }
-
-    li { margin-bottom: 8px; }
-
-    a { color: var(--purple); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    strong { color: var(--dark); }
-
-    /* ── Table ── */
-    .table-wrapper {
-      overflow-x: auto;
-      margin: 16px 0;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-
-    th {
-      background: var(--gradient);
-      color: #fff;
-      text-align: left;
-      padding: 12px 16px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    th:first-child { border-radius: 8px 0 0 0; }
-    th:last-child  { border-radius: 0 8px 0 0; }
-
-    td {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-
-    tr:last-child td { border-bottom: none; }
-    tr:nth-child(even) td { background: #fafafa; }
-
-    /* ── Tags ── */
-    .tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 20px;
-      background: rgba(86, 54, 209, 0.1);
-      color: var(--purple);
-      white-space: nowrap;
-    }
-
-    .tag.orange {
-      background: rgba(226, 73, 138, 0.1);
-      color: var(--pink);
-    }
-
-    /* ── Contact block ── */
-    .contact-block {
-      background: var(--gradient);
-      color: #fff;
-      border-radius: var(--radius);
-      padding: 32px;
-      margin-top: 24px;
-    }
-
-    .contact-block h2 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: #fff;
-    }
-
-    .contact-block a {
-      color: rgba(255,255,255,0.9);
-      text-decoration: underline;
-      text-decoration-color: rgba(255,255,255,0.4);
-    }
-
-    .contact-block a:hover {
-      color: #fff;
-      text-decoration-color: #fff;
-    }
-
-    .contact-block p {
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 6px;
-    }
-
-    .contact-block p:last-child { margin-bottom: 0; }
-
-    .contact-block strong { color: #fff; }
-
-    /* ── Footer ── */
-    footer {
-      text-align: center;
-      padding: 32px 24px;
-      font-size: 13px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-
-    footer a { color: var(--purple); }
-
-    /* ── Responsive ── */
-    @media (max-width: 600px) {
-      section { padding: 20px 18px; }
-      .contact-block { padding: 22px 18px; }
-      header { padding: 40px 20px 36px; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Política de Privacidade do aplicativo Altitude Elevadores">
+  <title>Política de Privacidade · Altitude Elevadores</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <div class="logo-wrap">
-    <img
-      src="logo.avif"
-      alt="Altitude Elevadores"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"
-    />
-    <span style="display:none; font-size:22px; font-weight:700; letter-spacing:1px;">ALTITUDE ELEVADORES</span>
+  <div class="wrap">
+    <img class="marca" src="logo.svg" alt="Altitude Elevadores">
+    <p class="slogan">Elevando expectativas.</p>
+    <div class="traco"></div>
+    <p class="eyebrow">Aplicativo Altitude Elevadores</p>
+    <h1>Política de Privacidade</h1>
+    <p class="data">Atualizada em 28 de outubro de 2026</p>
   </div>
-  <h1>Política de Privacidade</h1>
-  <span class="updated">Última atualização: 26 de março de 2025</span>
 </header>
 
-<main>
+<main class="wrap">
 
-  <div class="intro-box">
-    Esta Política de Privacidade descreve como a <strong>ALTITUDE ELEVADORES LTDA</strong> coleta, utiliza, armazena e protege os dados pessoais dos usuários do aplicativo <strong>Altitude Elevadores</strong>, em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong>, o <strong>Marco Civil da Internet (Lei nº 12.965/2014)</strong> e demais normas aplicáveis.
+  <div class="intro">
+    Esta política explica quais dados pessoais o aplicativo <strong>Altitude Elevadores</strong> usa, para quê, com quem eles são compartilhados e como você exerce seus direitos. Ela segue a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018) e o Marco Civil da Internet (Lei nº 12.965/2014).
   </div>
 
-  <!-- 1. Quem somos -->
-  <section>
-    <h2><span class="num">1</span> Quem somos</h2>
+  <section id="quem-somos">
+    <h2><span class="num">01</span> Quem somos</h2>
     <p>
-      <strong>ALTITUDE ELEVADORES LTDA</strong><br>
-      CNPJ: 40.970.713/0001-00<br>
-      Rua Santa Paula, 6438 — São José do Rio Preto – SP, CEP: 15040-544<br>
-      Site: <a href="https://altitudeelevadores.com.br" target="_blank" rel="noopener">altitudeelevadores.com.br</a><br>
-      Contato de privacidade: <a href="mailto:privacidade@altitudeelevadores.com.br">privacidade@altitudeelevadores.com.br</a>
+      <strong>Altitude Elevadores Ltda</strong><br>
+      CNPJ 40.970.713/0001-00<br>
+      Rua Santa Paula, 6438, São José do Rio Preto (SP), CEP 15040-544<br>
+      Site: <a href="https://altitudeelevadores.com.br">altitudeelevadores.com.br</a><br>
+      E-mail: <a href="mailto:contato@altitudeelevadores.com.br">contato@altitudeelevadores.com.br</a>
     </p>
-    <p>Somos a controladora dos dados pessoais tratados por meio do aplicativo Altitude Elevadores, disponível para dispositivos iOS, macOS e Android.</p>
+    <p>A Altitude é a controladora dos dados pessoais tratados pelo aplicativo Altitude Elevadores, disponível para iOS, macOS e Android.</p>
+    <p>O aplicativo é para clientes da Altitude que têm um elevador ou uma plataforma de acessibilidade Altitude. As contas são criadas pela Altitude; não há cadastro aberto no aplicativo.</p>
+    <p>Nas lojas de aplicativos, o Altitude Elevadores é publicado pela conta de desenvolvedor de Alex Nalla, em nome e com autorização da Altitude Elevadores Ltda.</p>
   </section>
 
-  <!-- 2. Dados coletados -->
-  <section>
-    <h2><span class="num">2</span> Quais dados coletamos</h2>
-    <p>Coletamos apenas os dados estritamente necessários para o funcionamento do aplicativo:</p>
-
-    <div class="table-wrapper">
+  <section id="dados">
+    <h2><span class="num">02</span> Quais dados usamos</h2>
+    <div class="tabela">
       <table>
         <thead>
-          <tr>
-            <th>Dado</th>
-            <th>Finalidade</th>
-            <th>Base legal (LGPD)</th>
-          </tr>
+          <tr><th>Dado</th><th>Para que usamos</th><th>Base legal (LGPD)</th></tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>E-mail</strong></td>
-            <td>Autenticação via magic link (link enviado por e-mail, sem senha)</td>
-            <td><span class="tag">Execução de contrato</span></td>
+            <td>Fazer o seu login: enviamos um link de acesso para este e-mail.</td>
+            <td><span class="base">Execução de contrato</span></td>
           </tr>
           <tr>
             <td><strong>Nome</strong></td>
-            <td>Identificação do usuário no app</td>
-            <td><span class="tag">Execução de contrato</span></td>
+            <td>Mostrar seu nome no aplicativo e identificar o seu acesso.</td>
+            <td><span class="base">Execução de contrato</span></td>
           </tr>
           <tr>
-            <td><strong>Token de dispositivo (FCM)</strong></td>
-            <td>Envio de notificações push sobre o elevador</td>
-            <td><span class="tag">Legítimo interesse</span></td>
+            <td><strong>Código do aparelho para notificações</strong></td>
+            <td>Enviar avisos sobre o seu equipamento e comunicados da Altitude.</td>
+            <td><span class="base">Legítimo interesse</span></td>
           </tr>
           <tr>
-            <td><strong>Dados de uso do elevador</strong></td>
-            <td>Exibição de status, histórico e controle remoto</td>
-            <td><span class="tag">Execução de contrato</span></td>
+            <td><strong>Rotinas, nomes dos andares e preferências</strong></td>
+            <td>Guardar o que você configura no aplicativo: rotinas, nomes dos andares, cor do layout e alertas sonoros.</td>
+            <td><span class="base">Execução de contrato</span></td>
           </tr>
           <tr>
-            <td><strong>Rede local (IP/MQTT)</strong></td>
-            <td>Comunicação em tempo real com o equipamento na mesma rede</td>
-            <td><span class="tag">Execução de contrato</span></td>
+            <td><strong>Dados de uso do equipamento</strong></td>
+            <td>Mostrar o status em tempo real (online, andar, direção) e o histórico do seu elevador. Esses dados são gerados pelo próprio equipamento.</td>
+            <td><span class="base">Execução de contrato</span></td>
           </tr>
           <tr>
-            <td><strong>Logs de erro (anônimos)</strong></td>
-            <td>Diagnóstico e melhoria do aplicativo</td>
-            <td><span class="tag orange">Legítimo interesse</span></td>
+            <td><strong>Relatórios de falhas do aplicativo</strong></td>
+            <td>Encontrar e corrigir erros. Os relatórios não levam seu nome nem seu e-mail.</td>
+            <td><span class="base">Legítimo interesse</span></td>
           </tr>
         </tbody>
       </table>
     </div>
-
-    <p><strong>Não coletamos:</strong> localização GPS, contatos, câmera, microfone, dados bancários ou qualquer informação não listada acima.</p>
+    <p>Não coletamos localização, contatos, fotos, imagens da câmera, áudio do microfone, dados bancários nem dados para publicidade.</p>
   </section>
 
-  <!-- 3. Como usamos -->
-  <section>
-    <h2><span class="num">3</span> Como utilizamos seus dados</h2>
-    <p>Utilizamos seus dados exclusivamente para:</p>
+  <section id="permissoes">
+    <h2><span class="num">03</span> Permissões do aparelho</h2>
+    <p><strong>Notificações:</strong> o aplicativo pede permissão para mostrar avisos. Você pode desligar a qualquer momento nos ajustes do aparelho; o aplicativo continua funcionando, só sem os avisos.</p>
+    <p>O aplicativo não pede acesso a localização, câmera, microfone, contatos ou fotos.</p>
+  </section>
+
+  <section id="compartilhamento">
+    <h2><span class="num">04</span> Com quem compartilhamos</h2>
+    <p>Só com os fornecedores que operam o serviço para a Altitude (operadores, na LGPD), e só o necessário para cada um:</p>
     <ul>
-      <li>Autenticar e permitir o acesso seguro à sua conta via magic link (não armazenamos senhas);</li>
-      <li>Exibir o status em tempo real e o histórico do seu elevador;</li>
-      <li>Enviar notificações push relevantes (alertas de manutenção, movimentação, status);</li>
-      <li>Conectar o aplicativo ao equipamento via rede local (protocolo MQTT);</li>
-      <li>Melhorar a qualidade e a estabilidade do aplicativo com base em logs anônimos.</li>
+      <li><strong>Supabase Inc.</strong>: login (e-mail e nome).</li>
+      <li><strong>Google LLC (Firebase Cloud Messaging)</strong>: entrega das notificações. No iOS e no macOS, a entrega passa também pelo serviço de notificações da Apple.</li>
+      <li><strong>Functional Software Inc. (Sentry)</strong>: relatórios de falhas, sem nome nem e-mail.</li>
+      <li><strong>Cloudflare Inc.</strong>: armazenamento das cópias de segurança.</li>
+      <li><strong>Servidores contratados pela Altitude</strong>, onde ficam o sistema e o banco de dados do aplicativo.</li>
     </ul>
-    <p>Não utilizamos seus dados para fins publicitários, criação de perfis comportamentais ou venda a terceiros.</p>
+    <p>Alguns desses fornecedores tratam dados fora do Brasil, por exemplo nos Estados Unidos, com garantias contratuais de proteção de dados, como prevê o artigo 33 da LGPD.</p>
+    <p>Quando você toca em WhatsApp ou e-mail na aba Suporte, a conversa acontece no aplicativo escolhido, com a política de privacidade dele.</p>
+    <p>Não vendemos nem alugamos seus dados e não os usamos para publicidade. Fora desta lista, só compartilhamos dados por obrigação legal ou ordem judicial.</p>
   </section>
 
-  <!-- 4. Compartilhamento -->
-  <section>
-    <h2><span class="num">4</span> Compartilhamento de dados</h2>
-    <p>Seus dados podem ser compartilhados apenas com os seguintes parceiros tecnológicos, na qualidade de operadores de dados, exclusivamente para viabilizar o funcionamento do app:</p>
+  <section id="retencao">
+    <h2><span class="num">05</span> Por quanto tempo guardamos</h2>
     <ul>
-      <li><strong>Supabase Inc.</strong> — banco de dados e autenticação (servidores hospedados nos EUA, com cláusulas contratuais padrão de proteção de dados);</li>
-      <li><strong>Google LLC (Firebase)</strong> — envio de notificações push (serviço Firebase Cloud Messaging).</li>
-    </ul>
-    <p>Não vendemos, alugamos ou compartilhamos seus dados com nenhum outro terceiro, salvo por obrigação legal ou ordem judicial.</p>
-  </section>
-
-  <!-- 5. Retenção -->
-  <section>
-    <h2><span class="num">5</span> Retenção e exclusão de dados</h2>
-    <p>Seus dados são mantidos enquanto sua conta estiver ativa. Ao solicitar a exclusão da conta:</p>
-    <ul>
-      <li>Dados de identificação (nome, e-mail) serão excluídos em até <strong>30 dias</strong>;</li>
-      <li>Logs de uso do elevador poderão ser mantidos por até <strong>5 anos</strong> para fins de segurança e responsabilidade técnica, conforme exigência legal;</li>
-      <li>Backups automáticos são eliminados em ciclos de até 90 dias.</li>
+      <li><strong>Nome, e-mail e códigos de notificação:</strong> enquanto a sua conta estiver ativa. Depois de um pedido de exclusão, são apagados em até 30 dias.</li>
+      <li><strong>Dados de uso do equipamento:</strong> podem ser mantidos por até 5 anos, para fins de segurança e de responsabilidade técnica sobre o equipamento.</li>
+      <li><strong>Relatórios de falhas:</strong> apagados automaticamente em até 90 dias.</li>
+      <li><strong>Cópias de segurança:</strong> apagadas automaticamente em até 180 dias.</li>
     </ul>
   </section>
 
-  <!-- 6. Segurança -->
-  <section>
-    <h2><span class="num">6</span> Segurança</h2>
-    <p>Adotamos medidas técnicas e organizacionais para proteger seus dados, incluindo:</p>
+  <section id="excluir-conta">
+    <h2><span class="num">06</span> Como excluir sua conta</h2>
+    <p>Você pode pedir a exclusão da sua conta do aplicativo Altitude Elevadores a qualquer momento:</p>
+    <ol>
+      <li>Escreva para <a href="mailto:contato@altitudeelevadores.com.br?subject=Excluir%20conta%20do%20aplicativo">contato@altitudeelevadores.com.br</a> a partir do e-mail da sua conta, ou fale com a Altitude pela aba Suporte do aplicativo (WhatsApp ou e-mail).</li>
+      <li>Diga que quer excluir a conta do aplicativo. Se precisarmos confirmar que o pedido é seu, respondemos pelo mesmo canal.</li>
+      <li>A conta é excluída em até 30 dias.</li>
+    </ol>
+    <p><strong>O que é apagado:</strong> nome, e-mail, acesso ao aplicativo, códigos de notificação dos seus aparelhos e as notificações enviadas a você.</p>
+    <p><strong>O que continua:</strong> os dados do equipamento (viagens, alertas, rotinas e nomes dos andares), que pertencem ao elevador e não à sua conta, pelos prazos da seção 05. As cópias de segurança que ainda tiverem seus dados são apagadas em até 180 dias.</p>
+    <p>Excluir a conta do aplicativo não cancela o contrato de manutenção nem outros serviços da Altitude.</p>
+  </section>
+
+  <section id="seguranca">
+    <h2><span class="num">07</span> Segurança</h2>
     <ul>
-      <li>Comunicações criptografadas via <strong>TLS/HTTPS</strong>;</li>
-      <li>Autenticação segura gerenciada pelo <strong>Supabase Auth</strong>;</li>
-      <li>Acesso restrito aos dados por parte da nossa equipe, com base no princípio do menor privilégio;</li>
-      <li>Monitoramento de acessos e alertas de segurança.</li>
+      <li>Os dados pessoais trafegam sempre criptografados (HTTPS).</li>
+      <li>O login é feito por um link enviado ao seu e-mail: o aplicativo não pede nem guarda senha.</li>
+      <li>Só a equipe que precisa dos dados tem acesso a eles, com o mínimo de permissão necessário.</li>
+      <li>Cópias de segurança diárias, guardadas em local separado, e monitoramento de falhas e de acessos.</li>
     </ul>
-    <p>Em caso de incidente de segurança que afete seus dados, notificaremos as autoridades competentes e os usuários afetados no prazo legal.</p>
+    <p>Se houver um incidente de segurança que possa afetar seus dados, avisaremos a Autoridade Nacional de Proteção de Dados (ANPD) e as pessoas afetadas, nos prazos da lei.</p>
   </section>
 
-  <!-- 7. Direitos do titular -->
-  <section>
-    <h2><span class="num">7</span> Seus direitos como titular (LGPD)</h2>
-    <p>Nos termos da LGPD, você tem direito a:</p>
+  <section id="direitos">
+    <h2><span class="num">08</span> Seus direitos (LGPD)</h2>
+    <p>Você tem direito a:</p>
     <ul>
-      <li><strong>Confirmação</strong> de que tratamos seus dados;</li>
-      <li><strong>Acesso</strong> aos dados que temos sobre você;</li>
-      <li><strong>Correção</strong> de dados incompletos, inexatos ou desatualizados;</li>
-      <li><strong>Anonimização, bloqueio ou eliminação</strong> de dados desnecessários;</li>
-      <li><strong>Portabilidade</strong> dos seus dados a outro fornecedor de serviço;</li>
-      <li><strong>Eliminação</strong> dos dados tratados com base em consentimento;</li>
-      <li><strong>Revogação do consentimento</strong> a qualquer momento;</li>
-      <li><strong>Reclamação</strong> perante a Autoridade Nacional de Proteção de Dados (ANPD).</li>
+      <li>confirmar se tratamos seus dados e ter acesso a eles;</li>
+      <li>corrigir dados incompletos, errados ou desatualizados;</li>
+      <li>pedir a anonimização, o bloqueio ou a eliminação de dados desnecessários, excessivos ou tratados em desacordo com a lei;</li>
+      <li>pedir a portabilidade dos seus dados a outro fornecedor;</li>
+      <li>saber com quem compartilhamos seus dados;</li>
+      <li>revogar um consentimento e pedir a eliminação dos dados tratados com base nele;</li>
+      <li>apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).</li>
     </ul>
-    <p>Para exercer qualquer desses direitos, entre em contato pelo e-mail <a href="mailto:privacidade@altitudeelevadores.com.br">privacidade@altitudeelevadores.com.br</a>. Responderemos em até <strong>15 dias úteis</strong>.</p>
+    <p>Para exercer qualquer um desses direitos, escreva para <a href="mailto:contato@altitudeelevadores.com.br">contato@altitudeelevadores.com.br</a>. Respondemos em até 15 dias.</p>
   </section>
 
-  <!-- 8. Crianças -->
-  <section>
-    <h2><span class="num">8</span> Menores de idade</h2>
-    <p>O aplicativo Altitude Elevadores é destinado exclusivamente a usuários maiores de 18 anos. Não coletamos intencionalmente dados de crianças ou adolescentes. Caso identifiquemos o cadastro de um menor, a conta será encerrada e os dados excluídos imediatamente.</p>
+  <section id="menores">
+    <h2><span class="num">09</span> Menores de idade</h2>
+    <p>O aplicativo é destinado a maiores de 18 anos. Não coletamos de propósito dados de crianças ou adolescentes. Se identificarmos a conta de um menor, ela será excluída.</p>
   </section>
 
-  <!-- 9. Atualizações -->
-  <section>
-    <h2><span class="num">9</span> Alterações nesta política</h2>
-    <p>Esta política pode ser atualizada periodicamente para refletir melhorias no aplicativo ou mudanças legais. Em caso de alterações relevantes, notificaremos os usuários via notificação no aplicativo ou e-mail com antecedência mínima de 10 dias.</p>
-    <p>A data da última atualização está sempre indicada no topo desta página.</p>
+  <section id="alteracoes">
+    <h2><span class="num">10</span> Alterações nesta política</h2>
+    <p>Podemos atualizar esta política para refletir mudanças no aplicativo ou na lei. Quando a mudança for relevante, avisaremos por notificação no aplicativo ou por e-mail, com pelo menos 10 dias de antecedência. A data da última atualização fica no topo desta página.</p>
   </section>
 
-  <!-- Contato -->
-  <div class="contact-block">
-    <h2>Fale com nosso time de privacidade</h2>
-    <p><strong>ALTITUDE ELEVADORES LTDA</strong></p>
-    <p>CNPJ: 40.970.713/0001-00</p>
-    <p>Rua Santa Paula, 6438 — São José do Rio Preto – SP, CEP: 15040-544</p>
-    <p>E-mail: <a href="mailto:privacidade@altitudeelevadores.com.br">privacidade@altitudeelevadores.com.br</a></p>
-    <p>Site: <a href="https://altitudeelevadores.com.br" target="_blank" rel="noopener">altitudeelevadores.com.br</a></p>
+  <div class="contato">
+    <h2>Dúvidas sobre privacidade</h2>
+    <p><strong>Altitude Elevadores Ltda</strong></p>
+    <p>CNPJ 40.970.713/0001-00</p>
+    <p>Rua Santa Paula, 6438, São José do Rio Preto (SP), CEP 15040-544</p>
+    <p>E-mail: <a href="mailto:contato@altitudeelevadores.com.br">contato@altitudeelevadores.com.br</a></p>
+    <p>Site: <a href="https://altitudeelevadores.com.br">altitudeelevadores.com.br</a></p>
   </div>
 
 </main>
 
 <footer>
-  &copy; 2025 <a href="https://altitudeelevadores.com.br" target="_blank" rel="noopener">Altitude Elevadores LTDA</a> &mdash; Todos os direitos reservados.
+  <div class="wrap">© 2026 <a href="https://altitudeelevadores.com.br">Altitude Elevadores Ltda</a></div>
 </footer>
 
 </body>
